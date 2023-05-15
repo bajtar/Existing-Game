@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class timer : MonoBehaviour
+public class Timer : MonoBehaviour
 {
     [SerializeField] private float time = 10;
 
@@ -11,11 +11,15 @@ public class timer : MonoBehaviour
     
     
     // Start is called before the first frame update
-    void Start()
+    public void AddTime()
     {
-        
+        time += 2;
     }
-
+//IDKIDKIDK
+    public void SubtractTime()
+    {
+        time -= 2;
+    }
     // Update is called once per frame
     void Update()
     {

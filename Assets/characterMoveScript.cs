@@ -8,16 +8,16 @@ public class characterMoveScript : MonoBehaviour
     public ProjectileBehaviour ProjectilePrefab;
     public Transform LaunchOffset;
     [SerializeField] private float speed;
-     private Rigidbody2D body;
+     private Rigidbody2D rb;
 
      private void Awake()
      {
-         body = GetComponent<Rigidbody2D>();
+         rb = GetComponent<Rigidbody2D>();
      }
 
      private void Update()
      {
-         body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
+         rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
 
          if (Input.GetButtonDown("Fire1"))
          {
