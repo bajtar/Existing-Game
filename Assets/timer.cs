@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
     [SerializeField] private float time = 10;
@@ -15,7 +15,7 @@ public class Timer : MonoBehaviour
     {
         time += 2;
     }
-//IDKIDKIDK
+
     public void SubtractTime()
     {
         time -= 2;
@@ -25,5 +25,17 @@ public class Timer : MonoBehaviour
     {
         time -= Time.deltaTime;
         timerText.text = time.ToString("00.000");
+        
+       
     }
+
+    private void FixedUpdate()
+    {
+         if (time <= 0)
+         {
+             SceneManager.LoadScene("game over");
+         }
+    }
+        
+       
 }
