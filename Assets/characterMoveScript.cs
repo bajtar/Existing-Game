@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class characterMoveScript : MonoBehaviour
+public class CharacterMoveScript : MonoBehaviour
 
 { 
     public ProjectileBehaviour ProjectilePrefab;
@@ -19,7 +19,13 @@ public class characterMoveScript : MonoBehaviour
 
      private void Update()
      {
-         rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
+         float h = Input.GetAxisRaw("Horizontal");
+         rb.velocity = new Vector2(h * speed, rb.velocity.y);
+
+         if (h != 0 )
+         {
+             transform.localScale = new Vector3(h, 1, 1);
+         }
 
          if (Input.GetButtonDown("Fire1"))
          {

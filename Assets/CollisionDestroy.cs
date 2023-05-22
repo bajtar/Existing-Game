@@ -29,10 +29,12 @@ public class CollisionDestroy : MonoBehaviour
         if (collision.gameObject.tag == "Projectile")
         {
              Timer timer = FindObjectOfType<Timer>();
+             ScoreScript scoreScript = FindObjectOfType<ScoreScript>();
+             
              if (tag == "Good")
              {
                  timer.AddTime();
-                 
+                 scoreScript.AddScore();
              }
              if (tag == "Bad")
              {
