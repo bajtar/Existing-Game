@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,13 @@ using UnityEngine;
 public class ProjectileBehaviour : MonoBehaviour
 {
   public float Speed = 6f;
+ 
+
+  private void Start()
+  {
+    
+  }
+
 
   private void Update()
   {
@@ -13,6 +21,7 @@ public class ProjectileBehaviour : MonoBehaviour
 
   private void OnCollisionEnter2D(Collision2D collision)
   {
+    
     Destroy(gameObject);
   }
   
