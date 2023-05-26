@@ -7,7 +7,7 @@ public class CollisionDestroy : MonoBehaviour
 {
     private Rigidbody2D rb;
    [SerializeField] public float forceAmount = 10;
-   public AudioSource m_bubbleSound;
+ 
    
    
     // Start is called before the first frame update
@@ -15,7 +15,7 @@ public class CollisionDestroy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.AddForce(Vector2.right * forceAmount, ForceMode2D.Impulse);
-        m_bubbleSound = GetComponent<AudioSource>();
+        
     }
 
  
@@ -23,7 +23,7 @@ public class CollisionDestroy : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
        
-        
+        Destroy(gameObject);
        
 
 
@@ -32,13 +32,13 @@ public class CollisionDestroy : MonoBehaviour
         {
              Timer timer = FindObjectOfType<Timer>();
              ScoreScript scoreScript = FindObjectOfType<ScoreScript>();
-             m_bubbleSound.Play();
+             
              
              if (tag == "Good")
              {
                  timer.AddTime();
                  scoreScript.AddScore();
-                 
+               
 
              }
              if (tag == "Bad")
@@ -53,6 +53,6 @@ public class CollisionDestroy : MonoBehaviour
 
             
         }
-        Destroy(gameObject);
+        
     }
 }

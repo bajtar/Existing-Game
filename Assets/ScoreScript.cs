@@ -22,4 +22,6 @@ public class ScoreScript : MonoBehaviour
         scoretext.text = "Score: " + score.ToString();
 
     }
+
+   
 }

@@ -18,7 +18,7 @@ public class Timer : MonoBehaviour
 
     public void SubtractTime()
     {
-        time -= 2;
+        time -= 5;
     }
     // Update is called once per frame
     void Update()
